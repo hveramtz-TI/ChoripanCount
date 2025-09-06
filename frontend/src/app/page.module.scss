@@ -1,0 +1,27 @@
+
+/* New CSS classes added */
+
+.layoutContainer {
+	min-height: 100dvh;
+	display: flex;
+	flex-direction: column;
+	background: black;
+}
+
+.layoutGrid {
+	flex: 1;
+	display: grid;
+	grid-template-columns: 1fr 3fr 1fr;
+	gap: 1rem;
+}
+
+.layoutAside {
+	display: flex;
+	justify-content: center;
+	align-items: start;
+	padding: 1rem 0;
+}
+
+.layoutMain {
+	padding: 1rem 0;
+}

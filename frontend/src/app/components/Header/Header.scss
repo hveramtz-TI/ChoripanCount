@@ -1,0 +1,33 @@
+
+.header-top {
+	width: 100%;
+	background: #222;
+	color: #fff;
+	text-align: center;
+	padding: 1rem 0;
+	position: sticky;
+	top: 0;
+	left: 0;
+	z-index: 101;
+	display: flex;
+	align-items: center;
+	align-content: center;
+	justify-content: start;
+	padding-left: 2rem;
+	padding-right: 2rem;
+	.content
+	{
+		width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+	.logo
+	{
+		img
+		{
+			max-width: 5rem;
+			height: auto;
+		}
+	}
+}

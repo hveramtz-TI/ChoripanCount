@@ -1,14 +1,15 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
-
+import "./globals.scss";
+import styles from "./page.module.scss";
+import Header from "./components/Header/Header";
+import Footer from "./components/Footer/Footer";
 export const metadata: Metadata = {
   title: "choripan count",
   description: "¿Cuánta comida puedo comprar por el valor de X producto?",
-  icons:
-  {
-    icon: "/icon.png",
-  }
+  icons: '/icon.png',
+  authors: [{ name: "hveramtz", url: "https://hveramtz.dev" }],
+  creator: "hveramtz",
 };
 
 export default function RootLayout({
@@ -27,41 +28,37 @@ export default function RootLayout({
         ></script>
       </head>
       <body>
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "1fr 3fr 1fr",
-            minHeight: "100dvh",
-            gap: "1rem",
-            background: "black"
-          }}
-        >
-          {/* Columna izquierda: Anuncio */}
-          <aside style={{ display: "flex", justifyContent: "center", alignItems: "start", padding: "1rem 0" }}>
-            <div>
-              {/* Bloque de anuncio AdSense */}
-              <ins className="adsbygoogle"
-                style={{ display: "block", width: 160, height: 600 }}
-                data-ad-client="TU_ID_DE_CLIENTE"
-                data-ad-slot="TU_SLOT_IZQUIERDO"
-                data-ad-format="auto"></ins>
-              <script dangerouslySetInnerHTML={{ __html: '(adsbygoogle = window.adsbygoogle || []).push({});' }} />
-            </div>
-          </aside>
-          {/* Columna central: Contenido */}
-          <main style={{ padding: "1rem 0" }}>{children}</main>
-          {/* Columna derecha: Anuncio */}
-          <aside style={{ display: "flex", justifyContent: "center", alignItems: "start", padding: "1rem 0" }}>
-            <div>
-              {/* Bloque de anuncio AdSense */}
-              <ins className="adsbygoogle"
-                style={{ display: "block", width: 160, height: 600 }}
-                data-ad-client="TU_ID_DE_CLIENTE"
-                data-ad-slot="TU_SLOT_DERECHO"
-                data-ad-format="auto"></ins>
-              <script dangerouslySetInnerHTML={{ __html: '(adsbygoogle = window.adsbygoogle || []).push({});' }} />
-            </div>
-          </aside>
+  <div className={styles.layoutContainer}>
+          <Header />
+          <div className={styles.layoutGrid}>
+            {/* Columna izquierda: Anuncio */}
+            <aside className={styles.layoutAside}>
+              <div>
+                {/* Bloque de anuncio AdSense */}
+                <ins className="adsbygoogle"
+                  style={{ display: "block", width: 160, height: 600 }}
+                  data-ad-client="TU_ID_DE_CLIENTE"
+                  data-ad-slot="TU_SLOT_IZQUIERDO"
+                  data-ad-format="auto"></ins>
+                <script dangerouslySetInnerHTML={{ __html: '(adsbygoogle = window.adsbygoogle || []).push({});' }} />
+              </div>
+            </aside>
+            {/* Columna central: Contenido */}
+            <main className={styles.layoutMain}>{children}</main>
+            {/* Columna derecha: Anuncio */}
+            <aside className={styles.layoutAside}>
+              <div>
+                {/* Bloque de anuncio AdSense */}
+                <ins className="adsbygoogle"
+                  style={{ display: "block", width: 160, height: 600 }}
+                  data-ad-client="TU_ID_DE_CLIENTE"
+                  data-ad-slot="TU_SLOT_DERECHO"
+                  data-ad-format="auto"></ins>
+                <script dangerouslySetInnerHTML={{ __html: '(adsbygoogle = window.adsbygoogle || []).push({});' }} />
+              </div>
+            </aside>
+          </div>
+          <Footer />
         </div>
       </body>
     </html>
