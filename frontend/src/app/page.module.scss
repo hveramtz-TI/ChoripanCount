@@ -25,3 +25,36 @@
 .layoutMain {
 	padding: 1rem 0;
 }
+
+
+
+.homeContainer {
+	width: 100%;
+	section
+	{
+		height: 100dvh;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+}
+
+.welcomeMessage {
+	height: fit-content;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	color: white;
+	text-align: center;
+	gap: 2rem;
+	h1
+	{
+		font-size: 4rem;
+	}
+	p
+	{
+		font-size: 1.2rem;
+	}
+}

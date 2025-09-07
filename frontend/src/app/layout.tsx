@@ -4,6 +4,7 @@ import "./globals.scss";
 import styles from "./page.module.scss";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
+import LenisProvider from "./components/LenisProvider/LenisProvider";
 export const metadata: Metadata = {
   title: "choripan count",
   description: "¿Cuánta comida puedo comprar por el valor de X producto?",
@@ -28,38 +29,40 @@ export default function RootLayout({
         ></script>
       </head>
       <body>
-  <div className={styles.layoutContainer}>
-          <Header />
-          <div className={styles.layoutGrid}>
-            {/* Columna izquierda: Anuncio */}
-            <aside className={styles.layoutAside}>
-              <div>
-                {/* Bloque de anuncio AdSense */}
-                <ins className="adsbygoogle"
-                  style={{ display: "block", width: 160, height: 600 }}
-                  data-ad-client="TU_ID_DE_CLIENTE"
-                  data-ad-slot="TU_SLOT_IZQUIERDO"
-                  data-ad-format="auto"></ins>
-                <script dangerouslySetInnerHTML={{ __html: '(adsbygoogle = window.adsbygoogle || []).push({});' }} />
-              </div>
-            </aside>
-            {/* Columna central: Contenido */}
-            <main className={styles.layoutMain}>{children}</main>
-            {/* Columna derecha: Anuncio */}
-            <aside className={styles.layoutAside}>
-              <div>
-                {/* Bloque de anuncio AdSense */}
-                <ins className="adsbygoogle"
-                  style={{ display: "block", width: 160, height: 600 }}
-                  data-ad-client="TU_ID_DE_CLIENTE"
-                  data-ad-slot="TU_SLOT_DERECHO"
-                  data-ad-format="auto"></ins>
-                <script dangerouslySetInnerHTML={{ __html: '(adsbygoogle = window.adsbygoogle || []).push({});' }} />
-              </div>
-            </aside>
+        <LenisProvider>
+          <div className={styles.layoutContainer}>
+            <Header />
+            <div className={styles.layoutGrid}>
+              {/* Columna izquierda: Anuncio */}
+              <aside className={styles.layoutAside}>
+                <div>
+                  {/* Bloque de anuncio AdSense */}
+                  <ins className="adsbygoogle"
+                    style={{ display: "block", width: 160, height: 600 }}
+                    data-ad-client="TU_ID_DE_CLIENTE"
+                    data-ad-slot="TU_SLOT_IZQUIERDO"
+                    data-ad-format="auto"></ins>
+                  <script dangerouslySetInnerHTML={{ __html: '(adsbygoogle = window.adsbygoogle || []).push({});' }} />
+                </div>
+              </aside>
+              {/* Columna central: Contenido */}
+              <main className={styles.layoutMain}>{children}</main>
+              {/* Columna derecha: Anuncio */}
+              <aside className={styles.layoutAside}>
+                <div>
+                  {/* Bloque de anuncio AdSense */}
+                  <ins className="adsbygoogle"
+                    style={{ display: "block", width: 160, height: 600 }}
+                    data-ad-client="TU_ID_DE_CLIENTE"
+                    data-ad-slot="TU_SLOT_DERECHO"
+                    data-ad-format="auto"></ins>
+                  <script dangerouslySetInnerHTML={{ __html: '(adsbygoogle = window.adsbygoogle || []).push({});' }} />
+                </div>
+              </aside>
+            </div>
+            <Footer />
           </div>
-          <Footer />
-        </div>
+        </LenisProvider>
       </body>
     </html>
   );

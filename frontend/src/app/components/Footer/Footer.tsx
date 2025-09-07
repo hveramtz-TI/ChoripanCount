@@ -8,7 +8,7 @@ const Footer = (props: Props) => {
   return (
     <div className="footer-fixed">
       <div className='content'>
-        <p>© 2024 hveramtz.dev. All rights reserved.</p>
+        <p>© 2025 hveramtz.dev. All rights reserved.</p>
         <p>
           <a href="/privacy">Privacy Policy</a> | <a href="/terms">Terms of Service</a>
         </p>
