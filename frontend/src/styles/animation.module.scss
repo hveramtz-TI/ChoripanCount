@@ -1,0 +1,25 @@
+/* Estados iniciales para elementos que serán animados con GSAP */
+.hidden {
+  opacity: 0;
+}
+
+.initial {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* Clases de apoyo para GSAP */
+.animated {
+  will-change: transform, opacity;
+}
+
+/* Prevenir flash de contenido no animado */
+.prepareAnimation {
+  opacity: 0;
+  transform: translateY(-50px) translateZ(0); /* Fuerza aceleración de hardware */
+}
+
+/* Utilidades */
+.noOverflow {
+  overflow: hidden;
+}
