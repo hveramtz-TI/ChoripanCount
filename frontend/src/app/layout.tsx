@@ -4,7 +4,6 @@ import "./globals.scss";
 import styles from "./page.module.scss";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
-import SmoothScroll from "./components/SmoothScroll/SmoothScroll";
 export const metadata: Metadata = {
   title: "choripan count",
   description: "¿Cuánta comida puedo comprar por el valor de X producto?",
@@ -29,8 +28,7 @@ export default function RootLayout({
         ></script>
       </head>
       <body>
-        <SmoothScroll />
-        <div className={styles.layoutContainer}>
+  <div className={styles.layoutContainer}>
           <Header />
           <div className={styles.layoutGrid}>
             {/* Columna izquierda: Anuncio */}
